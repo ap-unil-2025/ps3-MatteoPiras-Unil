@@ -51,7 +51,7 @@ def temperature_converter():
     # - Validate input
     # - Perform conversion
     # - Display result rounded to 2 decimal places
-     # Ask for temperature value
+     # Ask for temperature value.
     try:
         value = float(input("Enter the temperature value: "))
     except ValueError:
