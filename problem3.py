@@ -7,7 +7,7 @@ def get_numbers_from_user():
     """
     Prompt the user to enter numbers until they type 'done'.
     Returns:
-        list: a list of floats entered by the user
+        list: a list of floats entered by the userr
     """
     numbers = []
 
