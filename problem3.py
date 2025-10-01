@@ -5,16 +5,14 @@ Analyze a list of numbers provided by the user.
 from statistics import mean
 def get_numbers_from_user():
     """
-    Get numbers from user until they type 'done'.
-    Return a list of numbers.
-
+    Prompt the user to enter numbers until they type 'done'.
     Returns:
-        list: List of numbers entered by user
+        list: a list of floats entered by the user
     """
     numbers = []
 
     while True:
-        user_input = input("Enter a number or type 'done' to finish:")
+        user_input = input("Enter a number or type 'done' to finish: ")
 
         if user_input.lower() == 'done':
             break
@@ -60,7 +58,7 @@ def analyze_numbers(numbers):
         if int(n)%2 == 0:
             even_count +=1
         else:
-            odd_count +=1 
+            odd_count +=1
 
     analysis = {
         "count": count,
