@@ -41,7 +41,7 @@ def count_words(filename):
 
 def count_lines(filename):
     """
-    Count total lines in the file.
+    Count total lines in the file...
 
     Args:
         filename (str): Name of the file to analyze
