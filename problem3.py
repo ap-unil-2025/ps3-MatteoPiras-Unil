@@ -2,7 +2,7 @@
 Problem 3: Number Analysis
 Analyze a list of numbers provided by the user.
 """
-
+from statistics import mean
 def get_numbers_from_user():
     """
     Get numbers from user until they type 'done'.
@@ -18,13 +18,13 @@ def get_numbers_from_user():
         # TODO: Check if user typed 'done'
         # TODO: Try to convert to float and add to list
         # TODO: Handle invalid input gracefully
-        input = input("Enter a number or type 'done' to finish:")
+        user_input = input("Enter a number or type 'done' to finish:")
 
-        if input == 'done'
+        if user_input.lower() == 'done':
             break
 
         try:
-            number = float(input)
+            number = float(user_input)
             numbers.append(number)
         except ValueError:
             print("Invalid Input")
@@ -53,8 +53,33 @@ def analyze_numbers(numbers):
     """
     if not numbers:
         return None
+  
+  
+    count = len(numbers)
+    total = sum(numbers)
+    average = mean(numbers)
+    minimum = min(numbers)
+    maximum = max(numbers)
 
-    analysis = {}
+    even_count = 0
+    odd_count = 0
+
+    for n in numbers:
+        if int(n)%2 == 0:
+            even_count +=1
+        else:
+            odd_count +=1
+    
+
+    analysis = {
+        "count": count,
+        "sum": total,
+        "average": average,
+        "minimum": minimum,
+        "maximum": maximum,
+        "even_count": even_count,
+        "odd_count": odd_count
+    }
 
     # TODO: Calculate count
     # TODO: Calculate sum
@@ -63,25 +88,8 @@ def analyze_numbers(numbers):
     # TODO: Find maximum
     # TODO: Count even numbers (hint: use modulo operator)
     # TODO: Count odd numbers
-    count = len(numbers)
-    sum = sum(numbers)
-    average = mean(numbers)
-    minimun = min(numbers)
-    maximum = max(numbers)
 
-    if numbers:
-        even_count = 0
-        odd_count = 0
 
-        for n in numbers:
-            if int(n)/2 == 0:
-                even_count +=1
-            else:
-                odd_count +=1
-    
-    even = len(even_count)
-    odd = len(odd_count)
-    
     return analysis
 
 
@@ -104,6 +112,13 @@ def display_analysis(analysis):
     # Sum: 25
     # Average: 5.00
     # etc.
+    print(f"Count: {analysis['count']}")
+    print(f"Sum: {analysis['sum']}")
+    print(f"Average: {analysis['average']:.2f}")
+    print(f"Minimum: {analysis['minimum']}")
+    print(f"Maximum: {analysis['maximum']}")
+    print(f"Even numbers: {analysis['even_count']}")
+    print(f"Odd numbers: {analysis['odd_count']}")
     pass
 
 
