@@ -63,7 +63,25 @@ def analyze_numbers(numbers):
     # TODO: Find maximum
     # TODO: Count even numbers (hint: use modulo operator)
     # TODO: Count odd numbers
+    count = len(numbers)
+    sum = sum(numbers)
+    average = mean(numbers)
+    minimun = min(numbers)
+    maximum = max(numbers)
 
+    if numbers:
+        even_count = 0
+        odd_count = 0
+
+        for n in numbers:
+            if int(n)/2 == 0:
+                even_count +=1
+            else:
+                odd_count +=1
+    
+    even = len(even_count)
+    odd = len(odd_count)
+    
     return analysis
 
 
